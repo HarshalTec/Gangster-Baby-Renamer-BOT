@@ -41,8 +41,9 @@ async def start(client, message):
     button=InlineKeyboardMarkup([[
         InlineKeyboardButton('🤝 Support', url='https://t.me/Rename_Bot_Group')
         ],[
-        InlineKeyboardButton("📝Admin", url='https://t.me/harsh_26_2') ,
         InlineKeyboardButton('🤕 Help', callback_data='help')
+        ],[
+        InlineKeyboardButton("📝Admin", url='https://t.me/harsh_26_2')
         ]
         ]
     )
@@ -89,27 +90,25 @@ async def cb_handler(client, query: CallbackQuery):
             reply_markup=InlineKeyboardMarkup( [[
         InlineKeyboardButton('🤝 Support', url='https://t.me/Rename_Bot_Group')
         ],[
-        InlineKeyboardButton("📝Admin", url='https://t.me/harsh_26_2'),
-                InlineKeyboardButton('🤕 Help', callback_data='help')
+        InlineKeyboardButton('🤕 Help', callback_data='help')
+        ],[
+        InlineKeyboardButton("📝Admin", url='https://t.me/harsh_26_2')
         ]
         ]
                 )
             )
-        
-        
-     elif data == "help":
+    elif data == "help":
         await query.message.edit_text(
             text=mr.HELP_TXT,
             reply_markup=InlineKeyboardMarkup( [[
-               #⚠️ don't change source code & source link ⚠️ #
+              
                InlineKeyboardButton("❣️ Contact Admin ❣️", url="https://t.me/harsh_26_2")
                ],[
                InlineKeyboardButton("🔒 𝙲𝙻𝙾𝚂𝙴", callback_data = "close"),
                InlineKeyboardButton("◀️ 𝙱𝙰𝙲𝙺", callback_data = "start")
                ]]
             )
-        )    
-  
+        )
     elif data == "close":
         try:
             await query.message.delete()
